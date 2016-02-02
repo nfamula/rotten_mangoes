@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 #encyrpt passwords
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+#upload photos
+gem 'carrierwave'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
