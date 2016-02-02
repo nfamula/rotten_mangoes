@@ -2,7 +2,13 @@
   <small>
     <% if current_user %>
       Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-        <% else %>
+    	<% if current_user.admin == true %>
+    		(<%= link_to "Admin", admin_users_path %>)
+    		<% else %>
+  			<%= link_to "Admin", movies_path %> 
+  			<% flash[:alert] = "You must be an admin to access this page"%>
+    	<% end %>
+    <% else %>
       <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
     <% end %>
   </small>
