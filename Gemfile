@@ -33,6 +33,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #upload photos
 gem 'carrierwave'
 
+#add pagination
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
