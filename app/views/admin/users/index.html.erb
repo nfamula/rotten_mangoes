@@ -7,4 +7,5 @@
 	<h3>Name <%= user.firstname %></h3>
 	<h4>Created At <%= user.created_at %> </h4>
 	<h4>Updated At <%= user.updated_at %> </h4>
+<h2><%= link_to "destroy", admin_user_path(user), method: :delete, confirm: "Are you sure?" %></h2>
 <% end %>

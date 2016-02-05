@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
   scope :search, -> (title, director) { where(['title LIKE ? AND director LIKE ?', "%#{title}%", "%#{director}%"])}
 
   scope :runtime, -> (runtime_in_minutes) do
-    case runtime_in_minutes
+    case runtime_in_minutes #case has to refer back to the schema
 
     when "1"
      Movie.where(['runtime_in_minutes < 90'])
