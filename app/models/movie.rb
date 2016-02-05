@@ -2,7 +2,7 @@ class Movie < ActiveRecord::Base
   has_many :reviews
   mount_uploader :poster, MoviePosterUploader 
 
-  scope :search, -> (title, director) { where(['title LIKE ? AND director LIKE ?', "%#{title}%", "%#{director}%"])}
+  scope :search, -> (key_word) { where(['title LIKE ? OR director LIKE ?', "%#{key_word}%", "%#{key_word}%"])}
 
   scope :runtime, -> (runtime_in_minutes) do
     case runtime_in_minutes #case has to refer back to the schema
