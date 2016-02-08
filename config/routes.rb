@@ -6,6 +6,16 @@ RottenMangoes::Application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'movies#index'
+
+  # This creates a namespace called /admin
+  # All controllers and views referenced below should be put inside a
+  # /admin subdirectory inside /app/controllers
+  namespace :admin do
+    # This will look for /app/controllers/admin/users_controller.rb,
+    # and all views should be under /app/views/admin/users/
+    resources :users
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
