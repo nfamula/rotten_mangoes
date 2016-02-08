@@ -7,9 +7,8 @@ Users can add a movie, upload photo, and search.
 Implemented Admin accounts.
 Implemented pagination with Kaminari gem.
 
-'rails', '4.0.0'.
-*
-sqlite3 as the database for Active Record.
-*
-'bcrypt' gem to encrypt passwords.
-*
+Created with 'rails', '4.0.0'.
+
+Database: sqlite3 as the database for Active Record.
+
+Password encryption 'bcrypt' gem.
