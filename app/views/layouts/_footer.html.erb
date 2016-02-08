@@ -5,7 +5,7 @@
     	<% if current_user.admin == true %>
     		(<%= link_to "Admin", admin_users_path %>)
     		<% else %>
-  			<%= link_to "Admin", movies_path %> 
+  			<%= link_to "Admin", movie_path %> 
   			<% flash.now[:alert] = "You must be an admin to access this page"%>
     	<% end %>
     <% else %>
