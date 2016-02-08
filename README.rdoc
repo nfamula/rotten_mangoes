@@ -8,5 +8,8 @@ Implemented Admin accounts.
 Implemented pagination with Kaminari gem.
 
 'rails', '4.0.0'.
+*
 sqlite3 as the database for Active Record.
+*
 'bcrypt' gem to encrypt passwords.
+*
