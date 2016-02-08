@@ -1,6 +1,11 @@
 class MoviesController < ApplicationController
+
   def index
-    @movies = Movie.all
+    if params[:title] || params[:director] || params[:runtime_in_minutes]
+      @movies = Movie.search(params[:title], params[:director]).runtime(params[:runtime_in_minutes])
+    else
+      @movies = Movie.all
+    end
   end
 
   def show
@@ -17,7 +22,6 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-
     if @movie.save
       redirect_to movies_path, notice: "#{@movie.title} was submitted successfully!"
     else
@@ -40,6 +44,12 @@ class MoviesController < ApplicationController
     @movie.destroy
     redirect_to movies_path
   end
+
+  #scope :search, -> (term) { where('title LIKE ? OR director LIKE ? description LIKE ?', "%#{term}%") } #lambda
+
+  #def self.search_title(term)
+   #where('title LIKE ?', "%#{term}%")
+  #end
 
   protected
 

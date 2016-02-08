@@ -2,6 +2,22 @@ class Movie < ActiveRecord::Base
   has_many :reviews
   mount_uploader :poster, MoviePosterUploader 
 
+  scope :search, -> (title, director) { where(['title LIKE ? AND director LIKE ?', "%#{title}%", "%#{director}%"])}
+
+  scope :runtime, -> (runtime_in_minutes) do
+    case runtime_in_minutes
+
+    when "1"
+     Movie.where(['runtime_in_minutes < 90'])
+    
+    when "2"
+     Movie.where(['runtime_in_minutes 90...120'])
+
+    when "3"
+      Movie.where(['runtime_in_minutes > 120'])
+    end
+  end
+
   validates :title,
     presence: true
 
