@@ -1,6 +1,6 @@
 == README
 
-Mock Rotten Tomatoes web app created with Rails as Lighthouse Labs course work.
+Mock Rotten Tomatoes web app created with Rails as Lighthouse Labs course work (week 5).
 
 Implemented ActionMailer to email users when deleted by admin.
 Users can add a movie, upload photo, and search.
