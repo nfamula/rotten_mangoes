@@ -47,9 +47,9 @@ class MoviesController < ApplicationController
 
   #scope :search, -> (term) { where('title LIKE ? OR director LIKE ? description LIKE ?', "%#{term}%") } #lambda
 
-  #def self.search_title(term)
-   #where('title LIKE ?', "%#{term}%")
-  #end
+  def self.search_title(term)
+   where('title LIKE ?', "%#{term}%")
+  end
 
   protected
 
